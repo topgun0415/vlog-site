@@ -1,7 +1,35 @@
 import React, { useState } from 'react';
 import Header from '@/components/Header';
+import { useRouter } from 'next/router';
 
 const LoginPage = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const router = useRouter();
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const res = await fetch('/api/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password }),
+    });
+
+    const data = await res.json();
+    if (res.ok) {
+      alert('Login successful: ' + JSON.stringify(data));
+      // セッションストレージにデータを保存
+      // ここではPostテーブルの情報全てをsetする予定(IDでUserテーブルと紐付ける感じ、？)
+      sessionStorage.setItem('postData', JSON.stringify(data));
+      router.push('/bloglist');
+    } else {
+      alert('Login failed: ' + data.message);
+    }
+  };
+
   return (
     <>
       <div className='flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8'>
@@ -17,7 +45,7 @@ const LoginPage = () => {
         </div>
 
         <div className='mt-10 sm:mx-auto sm:w-full sm:max-w-sm'>
-          <form className='space-y-6' action='#' method='POST'>
+          <form className='space-y-6' onSubmit={handleSubmit}>
             <div>
               <label
                 htmlFor='email'
@@ -31,6 +59,8 @@ const LoginPage = () => {
                   type='email'
                   autoComplete='email'
                   required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
                 />
               </div>
@@ -58,6 +88,8 @@ const LoginPage = () => {
                   type='password'
                   autoComplete='current-password'
                   required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
                 />
               </div>
