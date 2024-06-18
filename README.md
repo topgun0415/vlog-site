@@ -18,7 +18,7 @@ This project is a blog site built with Next.js version 14. Backend processes are
 ## Usage
 The following is a basic explanation of how to use the application.
 
-### Login Screen
+### Login Page
 The screen for logging into the application.
 
 - **Sign-in Link**: Navigates to the Sign-in page.
@@ -29,7 +29,7 @@ The page where users can sign in to the application.
 
 - **Login Success**: Navigates to the Blog List screen.
 
-### Blog List Screen
+### Blog List Page
 The main screen where users can view a list of blog posts.
 
 - **Edit**: Navigates to the Blog Post Creation screen to edit an existing post.
@@ -43,7 +43,7 @@ The screen that shows the details of a selected blog post.
 - **Edit**: Navigates to the Blog Post Creation screen to edit the current post.
 - **Delete**: Deletes the post and navigates back to the Blog List screen.
 
-### Blog Post Creation Screen
+### Blog Post Page
 The screen for creating or editing a blog post.
 
 - **Save/Cancel**: Navigates back to the Blog List screen.
