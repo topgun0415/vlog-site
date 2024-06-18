@@ -7,9 +7,7 @@ This project is a blog site built with Next.js version 14. Backend processes are
 - [Installation](#installation)
 - [Install Dependencies](#install-dependencies)
 - [Usage](#usage)
-- [License](#license)
 - [Copyright](#copyright)
-- [Contact Information](#contact-information)
 
 ## Installation
 - **Clone the repository**:
@@ -51,14 +49,8 @@ The screen for creating or editing a blog post.
 - **Save/Cancel**: Navigates back to the Blog List screen.
 - **Delete**: Deletes the post and navigates back to the Blog List screen.
 
-## License
-This project is licensed under the MIT License. For details, please refer to the `LICENSE` file.
-
 ## Copyright
 © 2024 blog-site project developers
-
-## Contact Information
-For questions or support, please contact `your.email@example.com`.
 
 ## Install Dependencies
 ```bash
