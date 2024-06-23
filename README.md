@@ -42,13 +42,14 @@ The following is a basic explanation of how to use the application.
 The screen for logging into the application.
 
 - **Sign-in Link**: Navigates to the Sign-in page.
+- **Login Success**: Navigates to the Blog List screen.
 - **Forgot Password**: Navigates to the Sign-in page with the name and email address pre-filled.
 
 ### Sign-in Page
 
 The page where users can sign in to the application.
 
-- **Login Success**: Navigates to the Blog List screen.
+- **Create User**: Create new user infomation.
 
 ### Blog List Page
 
